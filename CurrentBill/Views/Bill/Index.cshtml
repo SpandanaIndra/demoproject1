@@ -1,0 +1,76 @@
+﻿@model CurrentBill.Models.BillModel
+
+<h2>Current Bill</h2>
+<hr />
+<form asp-controller="Bill" asp-action="Index">
+    <table>
+        <tr>
+            <td>
+                <label asp-for="MeterNo">Meter Number</label>
+
+            </td>
+            <td>
+                <input asp-for="MeterNo" type="text"  />
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="Name">Customer Name</label>
+
+            </td>
+            <td>
+                <input asp-for="Name" type="text" />
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="prevReading">Previous Reading</label>
+
+            </td>
+            <td>
+                <input asp-for="prevReading" type="text" />
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="currReading">Current Reading</label>
+
+            </td>
+            <td>
+                <input asp-for="currReading" type="text" />
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Submit" />
+
+            </td>
+        </tr>
+    </table>
+    <br />
+  
+   
+</form>
+
+@if(ViewBag.Bill!=null)
+{
+    <h4>Recipt</h4>
+    <hr />
+    <br />
+  
+    <h6>Meter No: @Model.MeterNo</h6>
+    <h6>Customer Name: @Model.Name</h6>
+    <h6>Previous Reading: @Model.prevReading</h6>
+    <h6> Current Reading : @Model.currReading</h6>
+    <h6 >Billed Units : @Model.billedUnits</h6>
+    <h6>Unit Price : @Model.unitPrice</h6>
+    <h6>Bill Amount : @Model.billAmount</h6>
+    <h6>Surcharge: @Model.surcharge</h6>
+
+    <h6>NetBill : @Model.netBill</h6>
+
+}
